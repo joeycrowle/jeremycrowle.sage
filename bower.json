@@ -1,0 +1,61 @@
+{
+  "name": "sage",
+  "homepage": "https://roots.io/sage/",
+  "authors": [
+    "Ben Word <ben@benword.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "git://github.com/twbs/bootstrap.git#v4.0.0-beta",
+    "popper.js": "^1.12.3",
+    "gsap": "^1.20.4",
+    "video.js": "video.js-dist#^4.6.1",
+    "jarallax": "^1.9.3",
+    "lazysizes": "^4.0.1",
+    "BigVideo": "bigvideo.js#^1.1.5",
+    "videojs-vimeo": "^2.0.0"
+  },
+  "overrides": {
+    "gsap": {
+      "main": [
+        "src/minified/TweenMax.min.js",
+        "src/minified/plugins/CSSPlugin.min.js"
+      ]
+    },
+    "video": {
+      "main": [
+        "dist/video-js/video.js",
+        "dist/video-js/video-js.css"
+      ]
+    },
+    "BigVideo": {
+      "main": [
+        "lib/bigvideo.js",
+        "css/bigvideo.css"
+      ]
+    },
+    "jquery-ui": {
+      "main": [
+        "jquery-ui.js"
+      ]
+    },
+    "imagesloaded": {
+      "main": [
+        "imagesloaded.js"
+      ]
+    },
+    "jarallax": {
+      "main": [
+        "dist/jarallax.js",
+        "dist/jarallax-video.js",
+        "dist/jarallax.css"
+      ]
+    },
+    "lazysizes": {
+      "main": [
+        "lazysizes.js"
+      ]
+    }
+  }
+}

@@ -1,0 +1,32 @@
+@font-face {
+    font-family: 'Palatino';
+    src: local('Palatino'), local('Palatino-Roman'),
+        url('../../assets/fonts/Palatino-Roman.woff2') format('woff2'),
+        url('../../assets/fonts/Palatino-Roman.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+p{
+  font-size: 14pt;
+}
+
+.home{
+  .nav-primary{
+    ul{
+      font-size: 0;
+      li{
+        a{
+          font-family: 'Palatino', serif;
+          font-size: 20pt;
+        }
+      }
+    }
+  }
+}
+
+.main-navigation-sub-menu{
+  a{
+    font-size: 20pt;
+  }
+}

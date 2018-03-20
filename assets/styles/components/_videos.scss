@@ -1,0 +1,25 @@
+.bg-video{
+  position: fixed !important;
+  bottom: -1px;
+  left: 0;
+  width: 100vw !important;
+  height: calc(100vh - 62px) !important;
+  z-index: -100;
+  video{
+    position: absolute;
+    top: 50% !important;
+    left: 50% !important;
+    min-width: 100% !important;
+    min-height: 100% !important;
+    width: auto !important;
+    height: auto !important;
+    transform: translate3d(-50%, -50%, 0);
+    pointer-events: none;
+  }
+  .vjs-big-play-button, .vjs-control-bar, .vjs-error-display{
+    display: none;
+  }
+  .vjs-poster{
+    background-size: cover !important;
+  }
+}
