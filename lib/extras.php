@@ -78,23 +78,3 @@ function niceImage($imageID, $classes){
       <img alt='".$alt."' src=".$imgSrc." data-src=".$imgSrc." class='".$classes."'>
     </picture>";
 }
-
-
-/**
- * CUSTOM POSTS IN ARCHIVES
- */
- /*
-function cpt_archive($query) {
-  if ( $query->is_category() && $query->is_main_query()  )  {
-      $query->set( 'post_type',
-          array(
-              'post',
-              'selected-works',
-
-          )
-      );
-  }
-  //return $query;
-  add_filter('pre_get_posts', $query);
-}
-*/

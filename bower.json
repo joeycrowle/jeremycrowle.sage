@@ -11,10 +11,7 @@
     "popper.js": "^1.12.3",
     "gsap": "^1.20.4",
     "video.js": "video.js-dist#^4.6.1",
-    "jarallax": "^1.9.3",
-    "lazysizes": "^4.0.1",
-    "BigVideo": "bigvideo.js#^1.1.5",
-    "videojs-vimeo": "^2.0.0"
+    "lazysizes": "^4.0.1"
   },
   "overrides": {
     "gsap": {
@@ -23,16 +20,10 @@
         "src/minified/plugins/CSSPlugin.min.js"
       ]
     },
-    "video": {
+    "video.js": {
       "main": [
         "dist/video-js/video.js",
         "dist/video-js/video-js.css"
-      ]
-    },
-    "BigVideo": {
-      "main": [
-        "lib/bigvideo.js",
-        "css/bigvideo.css"
       ]
     },
     "jquery-ui": {
@@ -43,13 +34,6 @@
     "imagesloaded": {
       "main": [
         "imagesloaded.js"
-      ]
-    },
-    "jarallax": {
-      "main": [
-        "dist/jarallax.js",
-        "dist/jarallax-video.js",
-        "dist/jarallax.css"
       ]
     },
     "lazysizes": {

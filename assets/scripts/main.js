@@ -25,17 +25,12 @@
         var navLinks = [];
 
 
-
-
-          $('.jarallax').jarallax();
-
-
           //VIDEO EVENTS
           $('.home-primary-nav').css('opacity', '0');
           $('#ambient-video').each(function(){
             var player = videojs('ambient-video');
             player.on('play', function () {
-              TweenMax.fromTo('.home-primary-nav', .5, {opacity: 0, y: 20}, {opacity: 1, y:0});
+              TweenMax.fromTo('.home-primary-nav', 0.5, {opacity: 0, y: 20}, {opacity: 1, y:0});
             });
           });
 
@@ -55,15 +50,7 @@
 
 
           //NAVIGATION
-          function toggleNavigation(){
-            if(!isAnimating){
-              if(!menuIsOpen){
-                openNavigation();
-              }else{
-                closeNavigation();
-              }
-            }
-          }
+
           function menuFinishedAnimating(){
             isAnimating = false;
             $('.hamburger').toggleClass('x');
@@ -78,7 +65,8 @@
               display: 'block',
               opacity: 0
             });
-            TweenMax.to('.navigation', 0.3, {opacity: .98});
+
+            TweenMax.to('.navigation', 0.3, {opacity: 0.98});
             TweenMax.to($('.nav-menus'), 0.3, {opacity: 1, delay: 0.3, onComplete: menuFinishedAnimating});
           }
           function closeNavigation(){
@@ -87,6 +75,16 @@
             TweenMax.to($('.nav-menus'), 0.3, {opacity: 0, });
             TweenMax.to('.navigation', 0.3, {opacity: 0, delay: 0.3, onComplete: menuFinishedAnimating});
           }
+          function toggleNavigation(){
+            if(!isAnimating){
+              if(!menuIsOpen){
+                openNavigation();
+              }else{
+                closeNavigation();
+              }
+            }
+          }
+
 
           $('.hamburger').click(function(){
             toggleNavigation();
@@ -100,6 +98,14 @@
 
           }, function(){
 
+          });
+
+
+          $('.post-list').masonry({
+            itemSelector: '.post-item',
+            columnWidth: '.grid-sizer',
+            percentPosition: true,
+            gutter: '.gutter'
           });
 
 
