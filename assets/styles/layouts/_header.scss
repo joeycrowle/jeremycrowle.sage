@@ -9,24 +9,41 @@ header{
   padding: 20px 30px;
   background: white;
   z-index: 999999;
-  a{
-    color: black;
+  .links{
+    a{
+      color: #333;
+      transition: .2s ease-out all;
+      &:hover{
+        color: #ccc;
+      }
+    }
+    .bread-crumb{
+      color: #ccc;
+      font-family: 'Palatino', serif;
+      margin-left: 20px;
+      font-size: 110%;
+      @media(max-width: $sm-screen){
+        display: none;
+      }
+    }
   }
+
 }
 
 .hamburger{
   cursor: pointer;
   position: relative;
-  width: 25px;
-  height: 20px;
+  width: 22px;
+  height: 16px;
   .stroke{
     position: absolute;
     width: 100%;
     height: 2px;
-    background: #666666;
+    background: #333;
     transition: .3s ease-out all;
     &:nth-child(2){
       top: 50%;
+      //margin-top: -1px;
     }
     &:nth-child(3){
       top: 100%;

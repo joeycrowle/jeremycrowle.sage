@@ -83,17 +83,18 @@ function niceImage($imageID, $classes){
 /**
  * CUSTOM POSTS IN ARCHIVES
  */
+ /*
 function cpt_archive($query) {
   if ( $query->is_category() && $query->is_main_query()  )  {
       $query->set( 'post_type',
           array(
               'post',
-              'artworks',
-              'photography',
-              'commercial'
+              'selected-works',
+
           )
       );
   }
   //return $query;
   add_filter('pre_get_posts', $query);
 }
+*/

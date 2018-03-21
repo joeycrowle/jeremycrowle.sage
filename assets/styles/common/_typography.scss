@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400');
+
 @font-face {
     font-family: 'Palatino';
     src: local('Palatino'), local('Palatino-Roman'),
@@ -8,7 +10,9 @@
 }
 
 p{
-  font-size: 14pt;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  font-size: 13pt;
 }
 
 .home{

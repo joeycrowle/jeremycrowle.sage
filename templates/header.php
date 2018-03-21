@@ -1,5 +1,10 @@
 <header class="banner">
+  <div class="links">
     <a class="brand" href="<?= esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a>
+    <a class="bread-crumb" href="#">Selected Works</a>
+  </div>
+
+
     <div class="hamburger">
       <div class="stroke"></div>
       <div class="stroke"></div>
