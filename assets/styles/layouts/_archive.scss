@@ -19,19 +19,17 @@
       }
     }
     .post-item{
-      color: #666;
+      color: black;
       float: left;
       padding: 40px 0;
       border-bottom: 1px solid black;
-      //margin-bottom: 30px;
-      //width: 22%;
       h1{
         font-family: 'Palatino', serif;
         font-size: 20pt;
-
       }
       p{
         margin-bottom: 0;
+        font-size: 12pt;
       }
       .details{
         margin-bottom: 0;
@@ -47,6 +45,25 @@
       }
       .description{
 
+      }
+      &:nth-child(3){
+        border-top: 1px solid black;
+      }
+      &:nth-child(4){
+        border-top: 1px solid black;
+      }
+      &:nth-child(5){
+        border-top: 1px solid black;
+      }
+      @media(max-width: $xl-screen){
+        &:nth-child(5){
+          border-top: 0;
+        }
+      }
+      @media(max-width: $md-screen){
+        &:nth-child(4){
+          border-top: 0;
+        }
       }
     }
   }
