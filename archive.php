@@ -22,7 +22,7 @@
         $tags = get_the_tags();
         $description = get_field('project_description');
     ?>
-    <a href=<?php echo $permalink ?> class="post-item">
+    <a href=<?php echo $permalink ?> class="post-item r">
       <h1><?php echo $title ?></h1>
       <p class="details">
         <?php echo $category . ", " . $year ?>

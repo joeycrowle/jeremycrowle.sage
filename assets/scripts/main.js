@@ -108,6 +108,18 @@
             gutter: '.gutter'
           });
 
+          window.sr = ScrollReveal();
+          sr.reveal('.r', {
+            scale: 1,
+            opacity: 0,
+            duration: 500,
+            distance: '0px'
+          },50);
+
+          $(window).load(function(){
+            $('body').removeClass('fouc');
+          })
+
 
 
       },

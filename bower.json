@@ -11,7 +11,8 @@
     "popper.js": "^1.12.3",
     "gsap": "^1.20.4",
     "video.js": "video.js-dist#^4.6.1",
-    "lazysizes": "^4.0.1"
+    "lazysizes": "^4.0.1",
+    "scrollreveal": "^3.4.0"
   },
   "overrides": {
     "gsap": {
@@ -39,6 +40,11 @@
     "lazysizes": {
       "main": [
         "lazysizes.js"
+      ]
+    },
+    "scrollreveal": {
+      "main": [
+        "dist/scrollreveal.js"
       ]
     }
   }

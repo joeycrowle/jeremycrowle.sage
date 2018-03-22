@@ -20,6 +20,7 @@ function body_class($classes) {
     $classes[] = 'sidebar-primary';
   }
 
+  $classes[] = 'fouc';
   return $classes;
 }
 add_filter('body_class', __NAMESPACE__ . '\\body_class');
