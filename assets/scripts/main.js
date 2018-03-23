@@ -116,6 +116,14 @@
             distance: '0px'
           },50);
 
+          // LAZY LOAD
+          $('.lazyload').css('opacity', '0');
+          document.addEventListener('lazyloaded', function(e){
+            img = $(e.target);
+            TweenMax.fromTo(img, 0.5, {opacity: 0}, {opacity: 1, ease: Power4.easeIn});
+          });
+
+
           $(window).load(function(){
             $('body').removeClass('fouc');
           })
