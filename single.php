@@ -1,6 +1,4 @@
 <?php
-  do_action('get_header');
-  get_template_part('templates/header');
   if( have_rows('rows') ): ?>
   <div class="post-layout">
   <?php
@@ -20,5 +18,4 @@ else :
 endif;
 ?>
 </div>
-
 <?php get_template_part('templates/post-footer'); ?>

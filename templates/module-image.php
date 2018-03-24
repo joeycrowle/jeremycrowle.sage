@@ -21,8 +21,10 @@ elseif($style == 'Center'){
 }
 
 if(!$useCaption){
-  $classes[] = 'no-caption';
-}
+  $classes[] = "no-caption";
+}else{
+  $classes[] = "caption";
+ }
 
 
 ?>
@@ -30,7 +32,6 @@ if(!$useCaption){
 
 
 <div class='<?php echo implode(" ", $classes); ?>'>
-  <div >
     <?php echo Extras\niceImage($imageId, 'lazyload'); ?>
     <?php if($useCaption) : ?>
       <div class="caption r">
@@ -39,5 +40,4 @@ if(!$useCaption){
         <?php echo $caption ?>
       </div>
     <?php endif; ?>
-  </div>
 </div>

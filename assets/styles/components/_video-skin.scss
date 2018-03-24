@@ -146,4 +146,7 @@
   .vjs-volume-handle{
     top: 1px;
   }
+  @media(max-width: $sm-screen){
+    display: none;
+  }
 }

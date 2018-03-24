@@ -12,7 +12,8 @@
     "gsap": "^1.20.4",
     "video.js": "video.js-dist#^4.6.1",
     "lazysizes": "^4.0.1",
-    "scrollreveal": "^3.4.0"
+    "scrollreveal": "^3.4.0",
+    "jarallax": "^1.10.2"
   },
   "overrides": {
     "gsap": {
@@ -45,6 +46,13 @@
     "scrollreveal": {
       "main": [
         "dist/scrollreveal.js"
+      ]
+    },
+    "jarallax": {
+      "main": [
+        "dist/jarallax.js",
+        "dist/jarallax-video.js",
+        "dist/jarallax.css"
       ]
     }
   }

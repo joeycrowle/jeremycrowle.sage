@@ -7,14 +7,48 @@
     width: 100%;
     height: auto !important;
   }
+  .caption{
+    padding: 65px 0 130px 0 ;
+    p{
+      margin-top: 30px;
+    }
+  }
+  &:last-child.centered.no-caption{
+    margin-bottom: 130px !important;
+  }
 }
 
 
 
 .centered-video{
   position: relative;
-  .vjs-control-bar{
-    position: absolute;
-    //bottom: 6px;
+}
+
+.centered.first{
+  margin-top: 130px !important;
+}
+
+.centered.no-caption{
+  margin-bottom: 30px !important;
+}
+
+
+.full-width + .centered{
+  margin-top: 130px;
+}
+
+.full-width + .img-center{
+  margin-top: 130px;
+}
+
+.full-width{
+  .jarallax{
+    height: calc(100vh - 66px);
+  }
+}
+
+.first.full-width{
+  .jarallax{
+    height: calc(100vh - 66px);
   }
 }

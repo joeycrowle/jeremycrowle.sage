@@ -1,0 +1,10 @@
+.post-text{
+  padding: 130px 30px;
+  p{
+    margin-top: 30px;
+  }
+}
+
+.img-center.caption + .post-text, .centered.caption + .post-text{
+  padding-top: 0;
+}

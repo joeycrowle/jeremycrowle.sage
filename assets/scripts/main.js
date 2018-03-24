@@ -108,7 +108,7 @@
             gutter: '.gutter'
           });
 
-          window.sr = ScrollReveal();
+          window.sr = new ScrollReveal();
           sr.reveal('.r', {
             scale: 1,
             opacity: 0,
@@ -126,7 +126,9 @@
 
           $(window).load(function(){
             $('body').removeClass('fouc');
-          })
+          });
+
+          $('.jarallax').jarallax();
 
 
 
