@@ -1,5 +1,9 @@
 <footer class="content-info">
   <div class="container">
-    <?php dynamic_sidebar('sidebar-footer'); ?>
+    <?php
+      if(is_single()){
+        include('post-nav.php');
+      }
+    ?>
   </div>
 </footer>

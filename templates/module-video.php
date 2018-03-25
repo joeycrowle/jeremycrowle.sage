@@ -10,7 +10,6 @@ $classes = ["post-video", "post-section"];
 if($i == 0){
   $classes[] = "first";
 }
-
 if($style == "Full"){
   $classes[] = "full-width";
 }
@@ -42,7 +41,7 @@ if(!$useCaption){
 
 <? elseif($style == "Full") : ?>
   <div class='<?php echo implode(" ", $classes); ?>'>
-    <div class="jarallax" data-jarallax-video=<?php echo "mp4:" . $video ?>>
+    <div class="jarallax lazyload" data-speed="0" data-jarallax-video=<?php echo "mp4:" . $video ?>>
     </div>
   </div>
 <?php endif; ?>

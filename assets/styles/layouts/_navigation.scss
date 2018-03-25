@@ -2,7 +2,7 @@
   display: none;
   position: fixed;
   width: 100vw;
-  height: calc(100% - 63.33px);
+  height: calc(100%);
   bottom: 0;
   left: 0;
   background: white;
@@ -12,7 +12,7 @@
   .container{
     opacity: 0;
     position: absolute;
-    top: 44%;
+    top: 50%;
     left: 50%;
     transform: translate3d(-50%, -50%, 0);
     .row{

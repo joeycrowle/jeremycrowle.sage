@@ -1,5 +1,7 @@
 <?php
-  if( have_rows('rows') ): ?>
+include('templates/post-nav.php');
+
+if( have_rows('rows') ): ?>
   <div class="post-layout">
   <?php
     $i=0;
@@ -18,4 +20,3 @@ else :
 endif;
 ?>
 </div>
-<?php get_template_part('templates/post-footer'); ?>

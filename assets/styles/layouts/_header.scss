@@ -21,13 +21,12 @@ header{
       color: #ccc;
       font-family: 'Palatino', serif;
       margin-left: 20px;
-      font-size: 110%;
+      font-size: 108%;
       @media(max-width: $sm-screen){
         display: none;
       }
     }
   }
-
 }
 
 .hamburger{
@@ -41,9 +40,11 @@ header{
     height: 2px;
     background: #333;
     transition: .3s ease-out all;
+    &:nth-child(1){
+      top: 0%;
+    }
     &:nth-child(2){
       top: 50%;
-      //margin-top: -1px;
     }
     &:nth-child(3){
       top: 100%;

@@ -1,9 +1,19 @@
 <header class="banner">
   <div class="links">
     <a class="brand" href="<?= esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a>
-    <a class="bread-crumb" href="#">Selected Works</a>
+    <?php
+      if(is_single()) :
+        $post_id = $post->ID; // current post ID
+        $cat = get_the_category();
+        $current_cat_id = $cat[0]->cat_ID; // current category ID
+        $child = get_category($current_cat_id);
+        $parent = $child->parent;
+        $parentName = get_the_category_by_ID($parent);
+        $parentLink = get_category_link($parent);
+        ?>
+        <a class="bread-crumb" href=<?php echo $parentLink ?>><?php echo $parentName ?></a>
+    <?php endif; ?>
   </div>
-
 
     <div class="hamburger">
       <div class="stroke"></div>

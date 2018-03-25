@@ -1,0 +1,39 @@
+footer{
+  background: #1f1f1f;
+  margin-top: auto;
+  .post-nav{
+    color: white;
+    text-align: center;
+    padding: 60px 0 130px 0;
+    p,a{
+      font-family: 'Palatino', serif;
+      font-size: 16pt;
+      display: inline-block;
+    }
+    a{
+      color: white;
+    }
+    .nav-item{
+      margin-right: 30px;
+      &:last-child{
+        margin-right: 0;
+      }
+    }
+    .previous{
+      opacity: .6;
+    }
+    .next{
+      opacity: .6;
+    }
+    .current{
+      user-select: none;
+    }
+    @media(max-width: $sm-screen){
+      .nav-item{
+        display: block;
+        margin-right: 0;
+        margin-bottom: 10px;
+      }
+    }
+  }
+}

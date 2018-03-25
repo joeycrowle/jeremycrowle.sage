@@ -19,6 +19,9 @@
 .img-center.first{
   padding-top: 130px;
 }
+.img-center.no-caption + .img-full{
+  margin-top: 130px;
+}
 
 .img-full.first{
   max-height: calc(100vh - 66px);
@@ -30,7 +33,7 @@
 
 .img-full{
   width: 100vw;
-  max-height: 100vh;
+  max-height: calc(100vh - 66px);
   overflow: hidden;
   img{
     width: 100%;

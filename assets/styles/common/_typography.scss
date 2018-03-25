@@ -11,6 +11,12 @@
 
 h1,h2,h3,h4,h5,h6{
   font-family: 'Palatino', serif;
+
+}
+
+h1,h2,h3,h4,h5,h6,a,p,span{
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
 }
 
 p{

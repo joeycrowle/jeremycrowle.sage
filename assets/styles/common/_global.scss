@@ -1,3 +1,9 @@
+body{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 .container{
   max-width: 100%;
   padding: 0 30px;
@@ -48,11 +54,10 @@ a{
   border: 0;
 }
 
-//debugging
 
-  .wrap{
-    margin-top: 66px;
-  }
+.wrap{
+  margin-top: 66px;
+}
 
 
 .fouc{
