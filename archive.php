@@ -20,7 +20,6 @@
         $year = date("Y",strtotime($post->post_date));
         $categories = get_the_category();
         $category = $categories[1]->name;
-        var_dump($categories);
         $tags = get_the_tags();
         $description = get_field('project_description');
         $postClasses = ["post-item", "r"];
