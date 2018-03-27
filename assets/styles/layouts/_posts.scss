@@ -29,19 +29,26 @@
       color: black;
       font-size: 20pt;
       transition: .17s ease-in transform;
-      &:hover{
-        transform: translateX(0);
-      }
+
     }
     .previous{
       transform: translateX(calc(-100% + 50px));
+      &:hover{
+        transform: translateX(calc(-100% + 80px));
+      }
     }
     .next{
       transform: translateX(calc(100% - 50px));
       right: 0;
+      &:hover{
+        transform: translateX(calc(100% - 80px));
+      }
 
     }
     .current{
+      display: none;
+    }
+    @media(max-width: $md-screen){
       display: none;
     }
   }

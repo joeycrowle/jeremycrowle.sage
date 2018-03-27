@@ -28,8 +28,8 @@ function setup() {
   // http://codex.wordpress.org/Function_Reference/register_nav_menus
   register_nav_menus([
     'primary_navigation' => __('Primary Navigation', 'sage'),
+    'current_works_navigation' => __('Current Works Navigation', 'sage'),
     'selected_works_navigation' => __('Selected Works Navigation', 'sage'),
-    'previous_works_navigation' => __('Previous Works Navigation', 'sage'),
     'details_navigation' => __('Details Navigation', 'sage')
   ]);
 

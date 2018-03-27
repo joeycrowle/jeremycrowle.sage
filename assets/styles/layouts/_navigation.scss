@@ -2,7 +2,7 @@
   display: none;
   position: fixed;
   width: 100vw;
-  height: calc(100%);
+  height: calc(100vh - 64px);
   bottom: 0;
   left: 0;
   background: white;
@@ -42,17 +42,23 @@
   }
   @media(max-width: $md-screen){
     .container{
-      top:0px;
-      padding-left: 0;
-      transform: translate3d(-50%, 0, 0);
+      top:60px;
+      left: 45px;
+      padding: 0;
+      transform: translate3d(0%, 0, 0);
       .row{
         flex-direction: column;
+        div[class*='col']{
+          padding: 0;
+        }
         ul{
           width: 100%;
           margin-bottom: 30px;
           li{
+
             a{
-              font-size: 12pt;
+              //font-size: 12pt;
+
             }
             &:first-child{
               margin-bottom: 5px;

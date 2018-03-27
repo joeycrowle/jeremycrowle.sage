@@ -79,6 +79,8 @@
               display: 'block',
               opacity: 0
             });
+            $('header .bread-crumb').css('opacity', 0);
+            TweenMax.to('header .bread-crumb', .3, {autoAlpha: 0});
             TweenMax.to('.navigation', 0.3, {opacity: 0.98});
             TweenMax.to($('.nav-menus'), 0.3, {opacity: 1, delay: 0.3, onComplete: menuFinishedAnimating});
             disableScroll();
@@ -86,6 +88,7 @@
           function closeNavigation(){
             isAnimating = true;
             menuIsOpen = false;
+            TweenMax.to('header .bread-crumb', 0.3, {autoAlpha: 1, delay: 0.3});
             TweenMax.to($('.nav-menus'), 0.3, {opacity: 0, });
             TweenMax.to('.navigation', 0.3, {opacity: 0, delay: 0.3, onComplete: menuFinishedAnimating});
           }
@@ -100,19 +103,16 @@
           }
 
           function focusLink(current, array){
-            l = array.length;
-            for(i=0;i<l;i++){
-              if(array[i]!=current){
-                link = array[i];
-               TweenMax.to(link, 0.3, {opacity: .3});
+            for(i=0; i<array.length; i++){
+              if(array[i] !== current){
+               TweenMax.to(array[i], 0.5, {opacity: 0.3});
               }
             }
           }
+
           function resetLinks(array){
-            l = array.length;
-            for(i=0;i<l;i++){
-              link = array[i];
-              TweenMax.to(link, 0.3, {opacity:1});
+            for(i=0;i<array.length;i++){
+              TweenMax.to(array[i], 0.3, {opacity:1, delay:0});
             }
           }
 
@@ -130,6 +130,12 @@
             subnavLinks.push(this);
           });
 
+          /*
+          $('.post-item').each(function(){
+            postItems.push(this);
+          });
+          */
+
           $('.main-navigation-sub-menu li').hover(function(){
             focusLink(this, subnavLinks);
           }, function(){
@@ -140,6 +146,12 @@
             focusLink(this, navLinks);
           }, function(){
             resetLinks(navLinks);
+          });
+
+          $('.post-item').hover(function(){
+            focusLink(this, postItems);
+          }, function(){
+            resetLinks(postItems);
           });
 
 

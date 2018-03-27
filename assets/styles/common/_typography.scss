@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:300,400');
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,200,300,400');
 
 @font-face {
     font-family: 'Palatino';
@@ -44,3 +44,16 @@ p{
     font-size: 20pt;
   }
 }
+
+/*
+.wrap{
+  a{
+    //font-family: 'Roboto', sans-serif;
+    font-weight: 400 !important;
+    color: #212528;
+    &:hover{
+      color: #ccc;
+    }
+  }
+}
+*/

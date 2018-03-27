@@ -1,15 +1,20 @@
+$dark-grey: #333;
+
 .post-list-container{
   padding: 0 30px;
   .post-list{
     margin-top: 200px;
     font-size: 0;
     .gutter{
-      width: 4%;
+      width: 30px;
     }
     .grid-sizer, .post-item{
-      width: 30.33%;
+      width: calc((100% - 90px)/4);
       @media (max-width: $xl-screen){
-        width: 48%;
+        width: calc((100% - 60px)/3);
+      }
+      @media (max-width: $lg-screen){
+        width: calc((100% - 30px)/2);
       }
       @media(max-width: $md-screen){
         width: 100%;
@@ -19,12 +24,14 @@
       color: black;
       float: left;
       padding: 40px 0;
-      border-bottom: 1px solid black;
+      border-bottom: 1px solid $dark-grey;
       h1{
+        color: $dark-grey;
         font-family: 'Palatino', serif;
         font-size: 20pt;
       }
       p{
+        color: $dark-grey;
         margin-bottom: 0;
         font-size: 12pt;
       }
@@ -35,6 +42,7 @@
       .tags{
         margin-bottom: 30px;
         p{
+          color: $dark-grey;
           display: inline-block;
           font-size: 12pt;
           margin-right: 4px;
@@ -43,22 +51,91 @@
       .description{
 
       }
+
+      .post-thumbnail{
+        width: calc((100% - 90px)/4);
+        img{
+          width: 100%;
+          float: left;
+          display: inline-block;
+          clear: both;
+        }
+        @media(max-width: $xl-screen){
+          width: calc((100% - 60px) / (3/2) + 30px);
+        }
+        @media(max-width: $md-screen){
+          width: 100%;
+        }
+      }
       &:nth-child(3){
-        border-top: 1px solid black;
+        display: flex;
+        width: 100%;
+        border-bottom: 0;
+        border-top: 0;
+        .post-details{
+          margin-left: 30px;
+          width: calc((100% - 90px)/4);
+          float: left;
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-end;
+        }
+        &:before{
+          content: '';
+          display: block;
+          width: calc(50% - 15px);
+          height: 1px;
+          background: $dark-grey;
+          position: absolute;
+          top: 0;
+        }
+        @media(max-width: $xl-screen){
+          .post-details{
+            width: calc((100% - 90px)/3);
+          }
+          &:before{
+            width: 100%;
+          }
+        }
+        @media(max-width: $md-screen){
+          flex-direction: column !important;
+          .post-details{
+            width: 100%;
+            margin-left: 0;
+            margin-top: 30px;
+          }
+          &:before{
+            width: 100%;
+          }
+        }
+      }
+      &:nth-child(3){
+        //border-top: 1px solid black;
       }
       &:nth-child(4){
-        border-top: 1px solid black;
+        border-top: 1px solid $dark-grey;
       }
       &:nth-child(5){
-        border-top: 1px solid black;
+        border-top: 1px solid $dark-grey;
+      }
+      &:nth-child(6){
+        border-top: 1px solid $dark-grey;
+      }
+      &:nth-child(7){
+        border-top: 1px solid $dark-grey;
       }
       @media(max-width: $xl-screen){
-        &:nth-child(5){
+        &:nth-child(7){
+          border-top: 0;
+        }
+      }
+      @media(max-width: $lg-screen){
+        &:nth-child(6){
           border-top: 0;
         }
       }
       @media(max-width: $md-screen){
-        &:nth-child(4){
+        &:nth-child(5){
           border-top: 0;
         }
       }
