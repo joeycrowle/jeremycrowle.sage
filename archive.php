@@ -22,7 +22,7 @@
         $category = $categories[1]->name;
         $tags = get_the_tags();
         $description = get_field('project_description');
-        $postClasses = ["post-item", "r"];
+        $postClasses = ["post-item", "r2"];
         if($x==0){
           $postClasses[] = "first";
         }
