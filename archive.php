@@ -43,7 +43,7 @@
 
       <?php if($x==0) : ?>
         <div class="post-thumbnail">
-          <?php echo Extras\niceImage($thumb, "lazyload") ?>
+          <?php echo Extras\niceImage($thumb, "lazyload first-thumbnail") ?>
         </div>
       <?php endif; ?>
 

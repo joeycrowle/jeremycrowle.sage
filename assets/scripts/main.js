@@ -81,7 +81,7 @@
               opacity: 0
             });
             $('header .bread-crumb').css('opacity', 0);
-            TweenMax.to('header .bread-crumb', .3, {autoAlpha: 0});
+            TweenMax.to('header .bread-crumb', 0.3, {autoAlpha: 0});
             TweenMax.to('.navigation', 0.3, {opacity: 0.98});
             TweenMax.to($('.nav-menus'), 0.3, {opacity: 1, delay: 0.3, onComplete: menuFinishedAnimating});
             disableScroll();
@@ -186,9 +186,11 @@
           document.addEventListener('lazyloaded', function(e){
             img = $(e.target);
             TweenMax.fromTo(img, 0.5, {opacity: 0}, {opacity: 1, ease: Power4.easeIn});
-            postList.masonry('layout');
           });
 
+          $('.first-thumbnail').on('load',function(){
+            postList.masonry();
+          });
 
           $(window).load(function(){
             $('body').removeClass('fouc');
