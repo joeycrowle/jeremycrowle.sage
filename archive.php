@@ -1,7 +1,9 @@
 <?php
   Use Roots\Sage\Extras;
   $queried_obj = get_queried_object();
-  $args = array('cat'=> $queried_obj->term_id);
+  $args = array(
+    'cat'=> $queried_obj->term_id
+  );
   $query = new WP_Query($args);
   $x = 0;
 
@@ -13,16 +15,26 @@
     <?php
       while($query->have_posts()) :
         $query->the_post();
+        $cat = get_the_category();
         $id = get_the_id();
         $thumb = get_post_thumbnail_id($id);
         $title = get_the_title();
         $permalink = get_the_permalink();
         $year = date("Y",strtotime($post->post_date));
-        $categories = get_the_category();
-        $category = $categories[1]->name;
         $tags = get_the_tags();
         $description = get_field('project_description');
         $postClasses = ["post-item", "r2"];
+
+        if($cat[0]->category_parent > 0){
+          $post_category_id = $cat[0]->category_parent;
+          $cat_name = $cat[0]->name;
+          var_dump($cat[0]);
+        }else{
+          $post_category_id = $cat[1]->cat_ID;
+          $cat_name = $cat[1]->name;
+        }
+
+
         if($x==0){
           $postClasses[] = "first";
         }
@@ -38,7 +50,7 @@
       <div class="post-details">
         <h1><?php echo $title ?></h1>
         <p class="details">
-          <?php echo $category . ", " . $year ?>
+          <?php echo $cat_name . ", " . $year ?>
         </p>
         <?php
         if ($tags) :

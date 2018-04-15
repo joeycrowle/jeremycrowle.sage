@@ -2,11 +2,16 @@
 <?php
 $post_id = $post->ID; // current post ID
 $cat = get_the_category();
-$current_cat_id = $cat[0]->cat_ID; // current category ID
-$child = get_category($current_cat_id);
-$parent = $child->parent;
+
+if($cat[0]->category_parent > 0){
+  $current_category_id = $cat[0]->category_parent;
+}else{
+  $current_category_id = $cat[0]->cat_ID;
+}
+
+
 $args = array(
-    'category' => $parent,
+    'category' => $current_category_id,
     'order'    => 'DESC'
 );
 

@@ -194,7 +194,7 @@
             $('body').removeClass('fouc');
           });
 
-          $('.jarallax').jarallax();
+          //$('.jarallax').jarallax();
 
 
 

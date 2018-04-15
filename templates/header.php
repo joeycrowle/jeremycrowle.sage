@@ -1,13 +1,22 @@
 <header class="banner">
   <div class="links">
     <a class="brand" href="<?= esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a>
+
     <?php
       if(is_single() || is_archive()) :
         $post_id = $post->ID; // current post ID
         $cat = get_the_category();
-        $current_cat_id = $cat[0]->cat_ID; // current category ID
-        $link = get_category_link($current_cat_id);
-        $name = $cat[0]->name;
+
+        if($cat[0]->category_parent > 0){
+          $current_category_id = $cat[0]->category_parent;
+          $link = get_category_link($current_category_id);
+          $name = get_cat_name($current_category_id);
+        }else{
+          $current_category_id = $cat[0]->cat_ID;
+          $link = get_category_link($current_category_id);
+          $name = $cat[0]->name;
+        }
+
         ?>
         <a class="bread-crumb" href=<?php echo $link ?>><?php echo $name ?></a>
     <?php endif; ?>
