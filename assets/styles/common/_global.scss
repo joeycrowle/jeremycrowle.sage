@@ -4,13 +4,32 @@ body{
   min-height: 100vh;
 }
 
+
+//GRID
 .container{
   max-width: 100%;
   padding: 0 30px;
   @media(min-width: 800px){
     max-width: 800px;
   }
+  .row{
+    margin-bottom: 30px;
+  }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 #page-background{
   width: 100vw;
@@ -52,6 +71,47 @@ body{
 a{
   text-decoration: none !important;
   border: 0;
+}
+
+ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  li{
+    transition: .2s ease-out all;
+    a{
+      transition: .2s ease-out all;
+      color: #333;
+    }
+  }
+}
+
+.inline-list-container{
+  ul{
+    margin-bottom: 100px;
+    padding: 20px 0;
+    li{
+      display: inline-block;
+      user-select: none !important;
+      a{
+        margin-right: 0px;
+
+        user-select: none !important;
+        cursor: pointer;
+        &:hover{
+          color: inherit;
+          color: #ccc;
+        }
+      }
+    }
+  }
+  .current-menu-item{
+    border-bottom: 1px solid #333;
+    pointer-events: none;
+    &:hover{
+      border-bottom-color: #ccc;
+    }
+  }
 }
 
 
