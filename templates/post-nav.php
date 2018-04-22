@@ -9,7 +9,6 @@ if($cat[0]->category_parent > 0){
   $current_category_id = $cat[0]->cat_ID;
 }
 
-
 $args = array(
     'category' => $current_category_id,
     'order'    => 'DESC'

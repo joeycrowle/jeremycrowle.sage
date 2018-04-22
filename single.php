@@ -18,5 +18,11 @@ if( have_rows('rows') ): ?>
 else :
 
 endif;
+
+include('templates/post-meta.php');
+
 ?>
+
+
+
 </div>

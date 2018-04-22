@@ -27,6 +27,9 @@
         var postItems = [];
 
 
+
+
+
           //VIDEO EVENTS
           $('.home-primary-nav').css('opacity', '0');
           $('#ambient-video').each(function(){
@@ -194,6 +197,11 @@
 
           $(window).load(function(){
             $('body').removeClass('fouc');
+          });
+
+          $(window).resize(function(){
+            innerHeight = $(window).innerHeight();
+            console.log(innerHeight);
           });
 
           //$('.jarallax').jarallax();
