@@ -25,13 +25,11 @@ $dark-grey: #333;
       float: left;
       padding: 40px 0;
       border-top: 0 !important;
-      transition: .2 ease-out all;
       //border-bottom: 1px solid $dark-grey;
       &:hover{
         .post-details{
           opacity: .5;
         }
-
       }
       h1{
         color: $dark-grey;

@@ -2,7 +2,8 @@
   Use Roots\Sage\Extras;
   $queried_obj = get_queried_object();
   $args = array(
-    'cat'=> $queried_obj->term_id
+    'cat'=> $queried_obj->term_id,
+    'posts_per_page'=> -1
   );
   $query = new WP_Query($args);
   $x = 0;
@@ -22,13 +23,13 @@
         $permalink = get_the_permalink();
         $year = date("Y",strtotime($post->post_date));
         $tags = get_the_tags();
+        $tagArray = [];
         $description = get_field('project_description');
-        $postClasses = ["post-item", "r2"];
+        $postClasses = ["post-item", "r"];
 
         if($cat[0]->category_parent > 0){
           $post_category_id = $cat[0]->category_parent;
           $cat_name = $cat[0]->name;
-          var_dump($cat[0]);
         }else{
           $post_category_id = $cat[1]->cat_ID;
           $cat_name = $cat[1]->name;
@@ -47,34 +48,27 @@
         </div>
       <?php endif; ?>
 
+
+
       <div class="post-details">
         <h1><?php echo $title ?></h1>
         <p class="details">
           <?php echo $cat_name . ", " . $year ?>
         </p>
-        <?php
-        if ($tags) :
-          $i = 0;
-          $s = '';
-          $length = count($tags);
-          ?>
-        <div class="tags">
-        <?php
-          foreach($tags as $tag){
-            if($i == 0 && $length < 1 || $i == $length-1){
-              $s = '';
+
+        <?php if($tags) : ?>
+          <div class="tags">
+            <p>
+            <?php
+            foreach ($tags as $tag) {
+              $tagArray[] = $tag->name;
             }
-            elseif($i == 0 && $length > 1 || $i>0 && $i<$length-1){
-              $s = ', ';
-            }
-            echo "<p>". $tag->name . $s ."</p>";
-            $i++;
-          }
-        else:
-          echo "no tags";
-        endif;
-        ?>
-        </div>
+            echo implode(", ", $tagArray);
+            ?>
+            </p>
+          </div>
+        <?php endif; ?>
+
         <div class="description">
           <?php echo $description ?>
         </div>

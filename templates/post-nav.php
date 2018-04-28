@@ -3,15 +3,19 @@
 $post_id = $post->ID; // current post ID
 $cat = get_the_category();
 
+//
 if($cat[0]->category_parent > 0){
   $current_category_id = $cat[0]->category_parent;
 }else{
   $current_category_id = $cat[0]->cat_ID;
 }
+//
+
 
 $args = array(
-    'category' => $current_category_id,
-    'order'    => 'DESC'
+    'cat' => $current_category_id,
+    'order'    => 'DESC',
+    'posts_per_page' => -1
 );
 
 $posts = get_posts( $args );
@@ -19,6 +23,7 @@ $ids = array();
 foreach ( $posts as $thepost ) {
     $ids[] = $thepost->ID;
 }
+
 $thisindex = array_search( $post_id, $ids );
 $previd    = isset( $ids[ $thisindex - 1 ] ) ? $ids[ $thisindex - 1 ] : 0;
 $nextid    = isset( $ids[ $thisindex + 1 ] ) ? $ids[ $thisindex + 1 ] : 0;
