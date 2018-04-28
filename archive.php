@@ -25,7 +25,7 @@
         $tags = get_the_tags();
         $tagArray = [];
         $description = get_field('project_description');
-        $postClasses = ["post-item", "r"];
+        $postClasses = ["post-item"];
 
         if($cat[0]->category_parent > 0){
           $post_category_id = $cat[0]->category_parent;
@@ -50,7 +50,10 @@
 
 
 
-      <div class="post-details">
+      <div class="post-details r">
+        <div class="hover-content">
+
+
         <h1><?php echo $title ?></h1>
         <p class="details">
           <?php echo $cat_name . ", " . $year ?>
@@ -71,6 +74,8 @@
 
         <div class="description">
           <?php echo $description ?>
+        </div>
+
         </div>
       </div>
     </a>
