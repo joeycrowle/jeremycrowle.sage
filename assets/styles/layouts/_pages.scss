@@ -1,5 +1,38 @@
-//aux template
+//home
+#page-background{
+  width: 100vw;
+  height: calc(100vh - 64px);
+  position: fixed !important;
+  bottom: -1px;
+  left: 0;
+  z-index: -99 !important;
+  picture{
+    width: 100%;
+    height: 100%;
+    img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
 
+.home-introduction{
+  text-align: center;
+  position: fixed;
+  top: calc(90%);
+  left: 50%;
+  transform: translate3d(-50%, -100%, 0);
+  color: white;
+  line-height: 200%;
+  padding: 0 50px !important;
+  opacity: .8;
+  @media(max-width: $md-screen){
+    display: none;
+  }
+}
+
+//aux template
 .page-template-template-aux{
   .wrap{
     display: flex;
@@ -7,16 +40,7 @@
     align-items: center;
     flex: 1;
   }
-}
-
-.content-stuck{
-  .content{
-    display: block;
-  }
-}
-
-.content-center{
-  .content{
-
+  .aux{
+    padding: 100px 0;
   }
 }

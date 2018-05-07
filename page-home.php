@@ -1,10 +1,15 @@
-<?php use Roots\Sage\Extras; ?>
+<?php use Roots\Sage\Extras;
+$media = get_field('media');
+$imgArray = [];
+$vidArray = [];
+$detect = new Mobile_Detect;
 
-<?php if(have_posts()): while(have_posts()): the_post(); ?>
-  <div class="home-introduction container">
-    <?php echo the_content(); ?>
-  </div>
-<?php endwhile; endif; ?>
+
+
+?>
+
+
+
 
 <nav class="nav-primary home-primary-nav">
   <?php
@@ -17,12 +22,13 @@
 
 
 <?php
-$media = get_field('media');
+/*
+
 $i = 0;
 if( $media ):
   $random = rand(1, sizeof($media));
-  ?>
-  <?php foreach( $media as $image ):
+
+  foreach( $media as $image ):
     $i++;
     if($i == $random){
       if($image['type'] == 'image'){
@@ -39,4 +45,53 @@ if( $media ):
     }
  endforeach;
 endif;
+*/
 ?>
+
+
+
+
+
+
+<?php
+if($media){
+  foreach($media as $image){
+    if($image['type'] == 'image'){
+      array_push($imgArray, $image['id']);
+    }
+    elseif ($image['type'] == 'video'){
+      array_push($vidArray, $image['id']);
+    }
+  }
+}
+if(count($imgArray) > 0){
+  $randImgNum = Extras\randomPosition($imgArray);
+}
+if(count($vidArray) > 0){
+  $randVidNum = Extras\randomPosition($vidArray);
+}
+?>
+
+<?php if($detect->isMobile()){
+  $testing = 'ismobile';
+}else{
+  $testing = 'isnotmobile';
+} ?>
+
+<div id="page-background" class="obj-fit">
+  <?php echo Extras\niceImage($imgArray[$randImgNum-1], 'lazyload'); ?>
+</div>
+
+
+
+
+
+
+
+
+
+<?php if(have_posts()): while(have_posts()): the_post(); ?>
+  <div class="home-introduction container">
+    <?php echo $testing; ?>
+  </div>
+<?php endwhile; endif; ?>

@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:100,200,300,400');
-
 @font-face {
     font-family: 'Palatino';
     src: local('Palatino'), local('Palatino-Roman'),
@@ -16,11 +14,19 @@ body{
 
 h1,h2,h3,h4,h5,h6{
   font-family: 'Palatino', serif;
-
+  line-height: 120%;
 }
 
-h1,h2,h3,h4,h5,h6,a,p,span{
 
+a{
+  &:not(.post-link,.brand,.wp-menu-item,.bread-crumb,.nav-item){
+    color: black;
+    font-weight: 400;
+    transition: .2s ease-in all;
+    &:hover{
+      color: #ccc;
+    }
+  }
 }
 
 p{
@@ -49,18 +55,7 @@ p{
   }
 }
 
+
+
 .bold{ font-weight: 400; }
 .white{ color: white; }
-
-/*
-.wrap{
-  a{
-    //font-family: 'Roboto', sans-serif;
-    font-weight: 400 !important;
-    color: #212528;
-    &:hover{
-      color: #ccc;
-    }
-  }
-}
-*/

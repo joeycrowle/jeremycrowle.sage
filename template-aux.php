@@ -2,8 +2,14 @@
 /**
  * Template Name: Aux
  */
-
 ?>
+
+<div class="aux">
+  <?php if(is_page('contact')) : ?>
+    <div class="contact-form container r">
+        <?php echo do_shortcode('[contact-form-7 id="413" title="Contact form 1"]'); ?>
+    </div>
+  <?php endif; ?>
 
   <?php
   if(have_rows('rows')) :
@@ -17,3 +23,4 @@
     endwhile;
     endif;
   ?>
+</div>

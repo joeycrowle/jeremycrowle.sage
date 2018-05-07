@@ -15,8 +15,6 @@ if( have_rows('rows') ): ?>
         endif;
         $i++;
     endwhile;
-else :
-
 endif;
 
 include('templates/post-meta.php');

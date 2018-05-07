@@ -1,8 +1,10 @@
 <?php
 
 namespace Roots\Sage\Setup;
-
 use Roots\Sage\Assets;
+require_once 'Mobile_Detect.php';
+
+
 
 /**
  * Theme setup
@@ -123,3 +125,9 @@ add_filter( 'single_template', function( $template ) {
     ? 'templates/project-single.php'
     : $template;
 });
+
+//nav-classes
+add_filter( 'nav_menu_link_attributes', function($atts) {
+        $atts['class'] = "wp-menu-item";
+        return $atts;
+}, 100, 1 );

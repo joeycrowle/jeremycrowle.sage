@@ -1,7 +1,6 @@
 <?php
 
 namespace Roots\Sage\Extras;
-
 use Roots\Sage\Setup;
 
 /**
@@ -78,4 +77,21 @@ function niceImage($imageID, $classes){
       <source srcset=".$imgLg[0]." media='(max-width: 1920px)'>
       <img alt='".$alt."' src=".$imgSrc." data-src=".$imgSrc." class='".$classes."'>
     </picture>";
+}
+
+/**
+ * Return Random Array Position
+ */
+ function randomPosition($array){
+   return rand(1, sizeof($array));
+ }
+
+
+/**
+ * NICE VAR DUMP
+ */
+ function pr($data){
+   echo "<pre>";
+   print_r($data);
+   echo "</pre>";
 }

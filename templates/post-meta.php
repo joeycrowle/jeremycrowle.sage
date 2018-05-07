@@ -1,11 +1,18 @@
 <?php
+Use Roots\Sage\Extras;
+
 $postTitle = get_the_title();
 $postDate = date("Y",strtotime($post->post_date));;
 $cat = get_the_category();
-$postCategory = $cat[0]->name;
 $tags = get_the_tags();
 $tagArray = [];
-$postDetails = '';
+$artworkDetails = get_field('artwork_details');
+
+$postCategory = $cat[0]->name;
+if($cat[0]->parent==0){
+  $postCategory = $cat[1]->name;
+}
+
 ?>
 
 
@@ -29,7 +36,7 @@ $postDetails = '';
         </div>
       <div class="col-sm-4">
         <h5 class="">Artwork Details</h5>
-        <p>A series of three images. Edition of 5.</p>
+        <p><?php echo $artworkDetails; ?></p>
       </div>
     </div>
   </div>

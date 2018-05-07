@@ -1,16 +1,13 @@
 <div class="post-nav">
 <?php
-$post_id = $post->ID; // current post ID
+$post_id = $post->ID;
 $cat = get_the_category();
 
-//
 if($cat[0]->category_parent > 0){
   $current_category_id = $cat[0]->category_parent;
 }else{
   $current_category_id = $cat[0]->cat_ID;
 }
-//
-
 
 $args = array(
     'cat' => $current_category_id,

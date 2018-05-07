@@ -40,20 +40,16 @@
           $postClasses[] = "first";
         }
     ?>
-    <a href=<?php echo $permalink ?> class='<?php echo implode(" ", $postClasses) ?>'>
-
+    <div class='<?php echo implode(" ", $postClasses) ?>'>
+      
+      <a class="post-link" href=<?php echo $permalink ?>>
       <?php if($x==0) : ?>
         <div class="post-thumbnail">
           <?php echo Extras\niceImage($thumb, "lazyload first-thumbnail") ?>
         </div>
       <?php endif; ?>
 
-
-
       <div class="post-details r">
-        <div class="hover-content">
-
-
         <h1><?php echo $title ?></h1>
         <p class="details">
           <?php echo $cat_name . ", " . $year ?>
@@ -75,10 +71,9 @@
         <div class="description">
           <?php echo $description ?>
         </div>
-
-        </div>
       </div>
     </a>
+    </div>
   <?php
       $x++;
       endwhile;
