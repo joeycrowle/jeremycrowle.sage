@@ -3,9 +3,6 @@ $media = get_field('media');
 $imgArray = [];
 $vidArray = [];
 $detect = new Mobile_Detect;
-
-
-
 ?>
 
 
@@ -18,39 +15,6 @@ $detect = new Mobile_Detect;
   endif;
   ?>
 </nav>
-
-
-
-<?php
-/*
-
-$i = 0;
-if( $media ):
-  $random = rand(1, sizeof($media));
-
-  foreach( $media as $image ):
-    $i++;
-    if($i == $random){
-      if($image['type'] == 'image'){
-        $id = $image['id']; ?>
-        <div id="page-background" class="obj-fit">
-          <?php echo niceImage( $id, 'lazyload' ); ?>
-        </div>
-    <?php
-      }
-      elseif($image['type'] == 'video'){
-        $url = $image['url'];
-        include('templates/bg-video.php');
-      }
-    }
- endforeach;
-endif;
-*/
-?>
-
-
-
-
 
 
 <?php
@@ -70,28 +34,31 @@ if(count($imgArray) > 0){
 if(count($vidArray) > 0){
   $randVidNum = Extras\randomPosition($vidArray);
 }
-?>
 
-<?php if($detect->isMobile()){
-  $testing = 'ismobile';
-}else{
-  $testing = 'isnotmobile';
-} ?>
+if($detect->isMobile()) : ?>
+  <div id="page-background" class="obj-fit">
+    <?php echo Extras\niceImage( $imgArray[$randImgNum-1], 'lazyload' ); ?>
+  </div>
+<?php else :
+  $random = rand(1, sizeof($media));
+  $bgMedia = $media[$random-1];
 
-<div id="page-background" class="obj-fit">
-  <?php echo Extras\niceImage($imgArray[$randImgNum-1], 'lazyload'); ?>
-</div>
+  if($bgMedia['type'] == 'image') : ?>
+  <div id="page-background" class="obj-fit">
+    <?php echo Extras\niceImage( $bgMedia['id'], 'lazyload' ); ?>
+  </div>
 
+  <?php elseif($bgMedia['type'] == 'video') :
+    $url = $bgMedia['url'];
+    include('templates/bg-video.php');
 
+    endif;
 
-
-
-
-
+   endif; ?>
 
 
 <?php if(have_posts()): while(have_posts()): the_post(); ?>
   <div class="home-introduction container">
-    <?php echo $testing; ?>
+    <?php echo the_content(); ?>
   </div>
 <?php endwhile; endif; ?>

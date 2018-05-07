@@ -26,13 +26,14 @@
         var subnavLinks = [];
         var footerNavLinks = [];
         var postItems = [];
-
-
-
-
+ 
 
           //VIDEO EVENTS
+
+          /*
           $('.home-primary-nav').css('opacity', '0');
+
+
           $('#ambient-video').each(function(){
             var player = videojs('ambient-video');
             player.on('play', function () {
@@ -40,6 +41,7 @@
               TweenMax.fromTo('.home-introduction', 1.5, {opacity: 0, y:-110}, {opacity: 1, y:-130, ease: Power4.easeOut, delay: 0.75});
             });
           });
+          */
 
           // OBJECT FIT FALLBACK
           if(!Modernizr.objectfit){

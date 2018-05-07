@@ -52,3 +52,7 @@
     height: calc(100vh - 66px);
   }
 }
+
+.full-width + .post-meta{
+  margin-top: 100px;
+}

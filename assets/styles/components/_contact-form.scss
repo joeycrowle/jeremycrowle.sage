@@ -37,10 +37,11 @@ input:-webkit-autofill {
     font-size: 12pt;
     background: none;
     border: 0;
-    font-family: 'Palatino', serif;
+    //font-family: 'Palatino', serif;
+
     padding: 0;
     margin-left: 15px;
-    margin-top: 30px; 
+    margin-top: 30px;
     cursor: pointer;
     &:focus{
       outline: 0;
@@ -82,7 +83,7 @@ input:-webkit-autofill {
   }
 
   span .wpcf7-not-valid {
-    border-bottom: 1px solid #ff9292;
+    border-bottom: 1px solid #999;
   }
 
   span .wpcf7-not-valid-tip {
