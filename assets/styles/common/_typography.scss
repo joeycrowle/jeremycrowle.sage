@@ -22,7 +22,7 @@ a{
   &:not(.post-link,.brand,.wp-menu-item,.bread-crumb,.nav-item){
     color: black;
     font-weight: 400;
-    transition: .2s ease-in all;
+    transition: .1s ease-out all;
     &:hover{
       color: #ccc;
     }
@@ -32,8 +32,8 @@ a{
 p{
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
-  font-size: 12pt;
-  //line-height: 100%;
+  font-size: 11pt;
+  line-height: 140%;
 }
 
 .home{

@@ -15,6 +15,10 @@ footer{
     }
     .nav-item{
       margin-right: 30px;
+      transition: .1s ease-out all;
+      &:hover{
+        opacity: 1;
+      }
       &:last-child{
         margin-right: 0;
       }

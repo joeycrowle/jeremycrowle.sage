@@ -26,7 +26,7 @@
         var subnavLinks = [];
         var footerNavLinks = [];
         var postItems = [];
- 
+
 
           //VIDEO EVENTS
 
@@ -114,15 +114,14 @@
           function focusLink(current, array){
             for(i=0; i<array.length; i++){
               if(array[i] !== current){
-               TweenMax.to(array[i], .5, {opacity: 0.3, ease: Power3.easeOut});
+               TweenMax.to(array[i], .2, {opacity: 0.5});
               }
             }
-
           }
 
           function resetLinks(array){
             for(i=0;i<array.length;i++){
-              TweenMax.to(array[i], .5, {opacity: 1, ease: Power3.easeIn});
+              TweenMax.to(array[i], .2, {opacity: 1, ease: Power3.easeIn});
             }
           }
 
@@ -168,9 +167,11 @@
           });
 
           $('.post-link').hover(function(){
-            focusLink(this, postItems);
+            TweenLite.to($(this), .2, {opacity: .6});
+            //focusLink(this, postItems);
           },function(){
-            resetLinks(postItems);
+            TweenLite.to($(this), .2, {opacity: 1});
+            //resetLinks(postItems);
           });
 
 
