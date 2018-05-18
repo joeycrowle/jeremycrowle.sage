@@ -6,8 +6,6 @@ $detect = new Mobile_Detect;
 ?>
 
 
-
-
 <nav class="nav-primary home-primary-nav">
   <?php
   if (has_nav_menu('primary_navigation')) :
@@ -28,6 +26,7 @@ if($media){
     }
   }
 }
+
 if(count($imgArray) > 0){
   $randImgNum = Extras\randomPosition($imgArray);
 }
@@ -39,7 +38,8 @@ if($detect->isMobile()) : ?>
   <div id="page-background" class="obj-fit">
     <?php echo Extras\niceImage( $imgArray[$randImgNum-1], 'lazyload' ); ?>
   </div>
-<?php else :
+<?php 
+  else :
   $random = rand(1, sizeof($media));
   $bgMedia = $media[$random-1];
 
@@ -48,17 +48,18 @@ if($detect->isMobile()) : ?>
     <?php echo Extras\niceImage( $bgMedia['id'], 'lazyload' ); ?>
   </div>
 
-  <?php elseif($bgMedia['type'] == 'video') :
+  <?php
+  elseif($bgMedia['type'] == 'video') :
     $url = $bgMedia['url'];
     include('templates/bg-video.php');
-
     endif;
+   endif;
 
-   endif; ?>
-
-
-<?php if(have_posts()): while(have_posts()): the_post(); ?>
+   if(have_posts()): while(have_posts()): the_post(); ?>
   <div class="home-introduction container">
     <?php echo the_content(); ?>
   </div>
-<?php endwhile; endif; ?>
+<?php
+  endwhile;
+    endif;
+?>

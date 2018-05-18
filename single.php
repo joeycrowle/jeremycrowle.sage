@@ -20,7 +20,4 @@ endif;
 include('templates/post-meta.php');
 
 ?>
-
-
-
 </div>

@@ -131,3 +131,12 @@ add_filter( 'nav_menu_link_attributes', function($atts) {
         $atts['class'] = "wp-menu-item";
         return $atts;
 }, 100, 1 );
+
+// unqueue jquery migrate
+add_filter( 'wp_default_scripts', __NAMESPACE__ . '\\dequeue_jquery_migrate' );
+function dequeue_jquery_migrate( &$scripts){
+  if(!is_admin()){
+    $scripts->remove( 'jquery');
+    $scripts->add( 'jquery', false, array( 'jquery-core' ), '1.10.2' );
+  }
+}

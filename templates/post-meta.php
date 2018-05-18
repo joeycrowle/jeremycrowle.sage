@@ -35,7 +35,7 @@ if($cat[0]->parent==0){
         </p>
         </div>
       <div class="col-sm-4">
-        <h5 class="">Artwork Details</h5>
+        <h5>Artwork Details</h5>
         <p><?php echo $artworkDetails; ?></p>
       </div>
     </div>

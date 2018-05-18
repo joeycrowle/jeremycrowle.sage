@@ -26,22 +26,32 @@
         var subnavLinks = [];
         var footerNavLinks = [];
         var postItems = [];
-
+        var resetDelay;
+        var inactivityTimeout;
 
           //VIDEO EVENTS
 
-          /*
-          $('.home-primary-nav').css('opacity', '0');
-
-
-          $('#ambient-video').each(function(){
-            var player = videojs('ambient-video');
-            player.on('play', function () {
-              TweenMax.fromTo('.home-primary-nav', 1.5, {opacity: 0, y: 20}, {opacity: 1, y:0, ease: Power4.easeOut, delay: 0.5});
-              TweenMax.fromTo('.home-introduction', 1.5, {opacity: 0, y:-110}, {opacity: 1, y:-130, ease: Power4.easeOut, delay: 0.75});
+          if($('#post-video').length){
+            player = videojs('post-video', {
+              "controls": true,
+              "preload": "metadata",
+              "loop": true
             });
-          });
-          */
+            player.on('mousemove', function(){
+              resetDelay();
+            });
+          }
+
+          resetDelay = function(){
+              clearTimeout(inactivityTimeout);
+              inactivityTimeout = setTimeout(function(){
+                  player.userActive(false);
+              }, 750);
+          };
+
+
+
+
 
           // OBJECT FIT FALLBACK
           if(!Modernizr.objectfit){
@@ -58,7 +68,7 @@
           }
 
 
-          //NAVIGATION
+          // NAVIGATION
 
           function disableScroll(){
             $('body').css({'overflow':'hidden'});
@@ -131,7 +141,7 @@
             toggleNavigation();
           });
 
-          //LINKS ARRAY
+          // LINKS ARRAY
           function linksArray(){
             $('.home-primary-nav li').each(function(){
               navLinks.push(this);
@@ -148,12 +158,11 @@
             $('.post-link').each(function(){
               postItems.push(this);
             });
-            console.log(postItems);
 
           }
 
 
-          //LINKS HOVER
+          // LINKS HOVER
           $('.main-navigation-sub-menu li').hover(function(){
             focusLink(this, subnavLinks);
           }, function(){
@@ -184,20 +193,21 @@
           });
 
 
+          // SCROLL REVEAL
           window.sr = new ScrollReveal();
-          sr.reveal('.r', {
-            scale: 1,
-            opacity: 0,
-            duration: 500,
-            distance: '0px'
-          });
 
-          sr.reveal('.r2', {
-            scale: 1,
-            opacity: 0,
-            duration: 500,
-            distance: '0px'
-          },10);
+          if($('.r')){
+            sr.reveal('.r', {
+              scale: 1,
+              opacity: 0,
+              duration: 500,
+              distance: '0px'
+            });
+          }
+
+
+
+
 
           // LAZY LOAD
           $('.lazyload').css('opacity', '0');
@@ -210,9 +220,40 @@
             postList.masonry();
           });
 
+
+
+
+
+
+
+          /* CONTACT EVENTS
+          wpcf7:invalid
+          wpcf7:spam
+          wpcf7:mailsent
+          wpcf7:mailfailed
+          wpcf7:submit
+          */
+          $(".wpcf7").on('wpcf7:mailfailed', function(event){
+            $('.wpcf7-submit').val('Failed To Send');
+          });
+
+          $(".wpcf7").on('wpcf7:mailsent', function(event){
+            $('.wpcf7-submit').val('Sent');
+            $('.contact-form').css({
+              pointerEvents: "none",
+            });
+            TweenLite.to($('.contact-form'), .4, {opacity: 0.4});
+          });
+
+
+
+
+
+
           $(window).load(function(){
             $('body').removeClass('fouc');
             linksArray();
+
           });
 
           $(window).resize(function(){

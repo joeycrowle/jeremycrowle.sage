@@ -25,7 +25,7 @@ if(!$useCaption){
 
 <?php if($style == "Center") : ?>
 <div class='<?php echo implode(" ", $classes); ?>'>
-  <video controls preload="metadata" class="centered-video vjs-default-skin" width="100%" height="auto" data-setup='{}'>
+  <video  id="post-video" class="centered-video vjs-default-skin" width="100%" height="auto">
     <source src=<?php echo $video . "#t=0.5" ?> type="video/mp4">
   </video>
   <?php if($useCaption) : ?>
