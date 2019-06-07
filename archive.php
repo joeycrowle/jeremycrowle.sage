@@ -1,7 +1,6 @@
 <?php
   Use Roots\Sage\Extras;
   $queried_obj = get_queried_object();
-  Extras\pr($queried_obj);
   $args = array(
     'cat'=> $queried_obj->term_id,
     'posts_per_page'=> -1
