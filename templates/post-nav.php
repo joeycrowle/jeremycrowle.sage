@@ -16,6 +16,7 @@ $args = array(
 );
 
 $posts = get_posts( $args );
+
 $ids = array();
 foreach ( $posts as $thepost ) {
     $ids[] = $thepost->ID;
@@ -24,6 +25,7 @@ foreach ( $posts as $thepost ) {
 $thisindex = array_search( $post_id, $ids );
 $previd    = isset( $ids[ $thisindex - 1 ] ) ? $ids[ $thisindex - 1 ] : 0;
 $nextid    = isset( $ids[ $thisindex + 1 ] ) ? $ids[ $thisindex + 1 ] : 0;
+
 
 if ( $previd ) {
     ?><a class="nav-item previous" rel="prev" href="<?php echo get_permalink($previd) ?>"><?php echo get_the_title($previd) ?></a><?php

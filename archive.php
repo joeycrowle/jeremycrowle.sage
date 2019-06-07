@@ -1,6 +1,7 @@
 <?php
   Use Roots\Sage\Extras;
   $queried_obj = get_queried_object();
+  Extras\pr($queried_obj);
   $args = array(
     'cat'=> $queried_obj->term_id,
     'posts_per_page'=> -1
@@ -37,13 +38,16 @@
 
 
         if($x==0){
-          $postClasses[] = "first";
+          //$postClasses[] = "first";
         }
     ?>
     <div class='<?php echo implode(" ", $postClasses) ?>'>
-      
+
       <a class="post-link" href=<?php echo $permalink ?>>
-      <?php if($x==0) : ?>
+
+
+        <!-- -10 here to turn this off for now..  -->
+      <?php if($x == -10) : ?>
         <div class="post-thumbnail">
           <?php echo Extras\niceImage($thumb, "lazyload first-thumbnail") ?>
         </div>
